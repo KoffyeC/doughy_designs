@@ -12,15 +12,15 @@ for GitHub Pages.
 | Design catalog | `designs.html` | Developer 1 |
 | About | `about.html` | Developer 1 |
 | Contact | `contact.html` | Developer 1 |
-| Customize (upload / move / resize image, custom writing) | `customize.html` | **Developer 2** |
+| Customize (upload / move / resize image, custom writing) | `customize.html` | Complete |
 | Order details (customer info + quantity) | `order-details.html` | Developer 1 |
-| Review & mock checkout | `review.html` | **Developer 2** |
-| Order confirmation | `confirmation.html` | **Developer 2** |
+| Review & mock checkout | `review.html` | Complete |
+| Order confirmation | `confirmation.html` | Complete |
 
-`customize.html` currently exists only as a navigation placeholder so the shared
-"Customize" nav link resolves. Developer 2 replaces its `<main>` content.
-`review.html` and `confirmation.html` have not been created — Developer 1's
-"Review Order" button links to `review.html` as the hand-off point.
+The complete ordering flow runs entirely in the browser. Uploaded images and
+customer details use session storage and disappear when the browser session
+ends. The checkout is clearly marked as a class demo and does not store or
+process payment information.
 
 ## Files
 
@@ -30,7 +30,9 @@ designs.html          Pre-made design catalog + design-type choices
 about.html            Business story, options, occasions, pricing table
 contact.html          Fictional contact details + contact form
 order-details.html    Quantity, customer/shipping details, order summary
-customize.html        Placeholder for Developer 2
+customize.html        Design-type selection, writing, and image customization
+review.html           Full order review and demo-only payment form
+confirmation.html     Fictional order confirmation and private demo record
 
 css/styles.css        Shared design system (colors, type, cards, forms, responsive)
 
@@ -41,6 +43,9 @@ js/designs.js         Catalog filters, selection, design-type choices
 js/form-utils.js      Shared field validation helpers
 js/contact.js         Contact form validation + confirmation
 js/order-details.js   Order details validation, live pricing, hand-off
+js/customize.js       Writing/image preview, upload, movement, and resizing
+js/review.js          Review summary and non-persistent demo checkout
+js/confirmation.js    Submitted demo order display
 js/home.js            "Popular right now" examples on the home page
 js/main.js            Mobile nav, header cookie count, footer year
 

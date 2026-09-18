@@ -94,6 +94,12 @@
       if (state.designType === "premade" && state.design) {
         summaryDesign.textContent = "Design: " + state.design.name;
         summaryDesign.hidden = false;
+      } else if (state.designType === "writing" && state.writingText) {
+        summaryDesign.textContent = "Message: “" + state.writingText + "”";
+        summaryDesign.hidden = false;
+      } else if (state.designType === "image" && state.customImage) {
+        summaryDesign.textContent = "Image: " + state.customImage.name;
+        summaryDesign.hidden = false;
       } else {
         summaryDesign.hidden = true;
       }
@@ -138,6 +144,15 @@
     if (!state.designType) {
       problems.push("Choose a design before placing your order.");
       noDesignNotice.hidden = false;
+    }
+    if (state.designType === "premade" && !state.design) {
+      problems.push("Choose a pre-made design before placing your order.");
+    }
+    if (state.designType === "writing" && !(state.writingText || "").trim()) {
+      problems.push("Enter your custom cookie message before placing your order.");
+    }
+    if (state.designType === "image" && !state.customImage) {
+      problems.push("Upload a custom image before placing your order.");
     }
 
     problems = problems.concat(

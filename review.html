@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Review &amp; Demo Checkout — Doughy Designs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="index.html"><img src="assets/logo.png" alt="Doughy Designs — custom cookie design" /></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Main">
+          <ul>
+            <li><a href="index.html">Home</a></li><li><a href="designs.html">Designs</a></li>
+            <li><a href="customize.html" aria-current="page">Customize</a></li><li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li><li class="nav-cart"><a class="cart-pill" href="order-details.html" data-cart-count>Cart • 0</a></li>
+          </ul>
+        </nav>
+        <a class="cart-pill header-cart" href="order-details.html" data-cart-count>Cart • 0</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="wrap page-head">
+        <h1>Review &amp; checkout</h1>
+        <p>Check your order, then complete the fictional payment form.</p>
+      </section>
+
+      <section class="wrap checkout-layout">
+        <div>
+          <section class="checkout-card">
+            <h2>Order details</h2>
+            <div class="form-alert" id="missing-order" role="alert" hidden></div>
+            <dl class="order-detail-list" id="review-details"></dl>
+            <p style="margin-top: 20px"><a class="btn btn--ghost btn--sm" href="order-details.html">Edit order</a></p>
+          </section>
+
+          <section class="checkout-card" style="margin-top: 24px">
+            <h2>Demo payment</h2>
+            <div class="demo-banner">
+              <strong>Class demonstration only — no payment is processed.</strong>
+              Use fictional values. Card details are validated only in this page and are never saved or transmitted.
+            </div>
+            <form id="payment-form" novalidate autocomplete="off">
+              <div class="form-alert" id="payment-alert" role="alert" hidden></div>
+              <div class="field-grid">
+                <div class="field field--full">
+                  <label for="demo-card-name">Name on fictional card</label>
+                  <input id="demo-card-name" type="text" placeholder="Demo Customer" autocomplete="off" />
+                  <p class="error-text"></p>
+                </div>
+                <div class="field field--full">
+                  <label for="demo-card-number">Fictional card number</label>
+                  <input id="demo-card-number" type="text" inputmode="numeric" maxlength="19" placeholder="4242 4242 4242 4242" autocomplete="off" aria-describedby="card-demo-hint" />
+                  <p class="error-text"></p>
+                  <p class="hint" id="card-demo-hint">Demo input only. Do not enter a real card number.</p>
+                </div>
+                <div class="field">
+                  <label for="demo-expiry">Expiration</label>
+                  <input id="demo-expiry" type="text" inputmode="numeric" maxlength="5" placeholder="12/30" autocomplete="off" />
+                  <p class="error-text"></p>
+                </div>
+                <div class="field">
+                  <label for="demo-cvv">CVV</label>
+                  <input id="demo-cvv" type="text" inputmode="numeric" maxlength="4" placeholder="123" autocomplete="off" />
+                  <p class="error-text"></p>
+                </div>
+              </div>
+              <button class="btn btn--primary btn--block" type="submit">Place Demo Order</button>
+            </form>
+          </section>
+        </div>
+
+        <aside class="summary">
+          <h2>Order summary</h2>
+          <p class="summary__type" id="review-type">—</p>
+          <p class="summary__line" id="review-customization"></p>
+          <p class="summary__line" id="review-price-line"></p>
+          <div class="summary__row"><span>Shipping</span><span class="free">FREE</span></div>
+          <p class="summary__total-label">Total</p>
+          <p class="summary__total" id="review-total">$0.00</p>
+          <p class="hint">No real order, payment, or shipment will be created.</p>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div><img src="assets/logo.png" alt="Doughy Designs" /><p>Custom-designed sugar cookies for birthdays, parties, gifts and inside jokes.</p></div>
+          <div><h3>Explore</h3><ul><li><a href="index.html">Home</a></li><li><a href="designs.html">Designs</a></li><li><a href="customize.html">Customize</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+          <div><h3>Contact</h3><ul><li><a href="mailto:hello@doughydesigns.example">hello@doughydesigns.example</a></li><li><a href="tel:+15550132665">(555) 013-2665</a></li></ul><p>Images and customer details stay private in this browser session.</p></div>
+        </div>
+        <p class="site-footer__legal">© <span data-year>2026</span> Doughy Designs — a fictional business created for a Software Engineering class project. No real orders, payments, or shipments are processed.</p>
+      </div>
+    </footer>
+    <script src="js/order-state.js"></script>
+    <script src="js/form-utils.js"></script>
+    <script src="js/review.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

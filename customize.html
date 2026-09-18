@@ -4,21 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Customize — Doughy Designs</title>
-    <!--
-      ======================================================================
-      PLACEHOLDER — DEVELOPER 2'S PAGE
-      ======================================================================
-      Developer 1 created this file only so the shared "Customize" link in the
-      site navigation resolves. None of the customize functionality is built
-      here. Developer 2 should replace the <main> section below with the real
-      customize step: the three design-type option cards, the cookie preview,
-      the image upload / move / resize / replace / remove controls, and the
-      "Continue to Customer Info" button that links to order-details.html.
-
-      The customer's selection so far is already saved in
-      sessionStorage["doughyDesigns.order"] - see js/order-state.js.
-      ======================================================================
-    -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -76,33 +61,88 @@
     <main>
       <section class="wrap page-head">
         <h1>Customize your cookie</h1>
-        <p>Choose one option, then set your quantity.</p>
+        <p>Choose a design style, preview it, and make it yours.</p>
       </section>
 
-      <section class="wrap">
-        <div class="card" style="text-align: center; padding: 48px 28px">
-          <p style="color: var(--muted); max-width: 52ch; margin: 0 auto">
-            This step is under construction. In the meantime you can pick a
-            design and continue to your order details.
-          </p>
-          <p style="margin-top: 22px">
-            <a class="btn btn--primary" href="designs.html">Choose a design</a>
-            <a
-              class="btn btn--ghost"
-              href="order-details.html"
-              style="margin-left: 10px"
-              >Continue to Customer Info</a
-            >
-          </p>
+      <section class="wrap customize-shell">
+        <div class="customize-options" role="radiogroup" aria-label="Design type">
+          <button class="option-card" type="button" data-custom-type="premade" role="radio">
+            <h3>Pre-made design</h3>
+            <span class="price">From $2.00 each</span>
+            <p>Use the design you selected from our catalog.</p>
+          </button>
+          <button class="option-card" type="button" data-custom-type="writing" role="radio">
+            <h3>Custom writing</h3>
+            <span class="price">From $2.50 each</span>
+            <p>Add a short message in icing.</p>
+          </button>
+          <button class="option-card" type="button" data-custom-type="image" role="radio">
+            <h3>Custom image</h3>
+            <span class="price">From $3.00 each</span>
+            <p>Upload, position, and resize your own image.</p>
+          </button>
         </div>
 
-        <p class="handoff-note">
-          <strong>Team note:</strong> this file is a navigation placeholder
-          created by Developer 1. Developer 2 owns the customize step — the
-          design-type option cards, cookie preview, image upload and
-          move/resize/replace/remove controls — and should replace the section
-          above with it.
-        </p>
+        <div class="customize-workspace">
+          <section class="preview-card" aria-labelledby="preview-heading">
+            <h2 id="preview-heading">Cookie preview</h2>
+            <div class="cookie-preview" id="cookie-preview">
+              <div id="premade-preview" class="preview-layer"></div>
+              <p id="writing-preview" class="writing-preview" hidden></p>
+              <img id="image-preview" class="uploaded-preview" alt="Your uploaded cookie design" hidden />
+              <span id="empty-preview" class="preview-empty">Choose a design</span>
+            </div>
+            <p class="preview-help" id="drag-help" hidden>Drag the image to position it on the cookie.</p>
+          </section>
+
+          <aside class="customize-panel">
+            <div id="premade-controls" class="custom-controls" hidden>
+              <h2>Selected design</h2>
+              <p id="premade-name">No pre-made design selected.</p>
+              <a class="btn btn--ghost btn--sm" href="designs.html">Choose another</a>
+            </div>
+
+            <div id="writing-controls" class="custom-controls" hidden>
+              <h2>Your message</h2>
+              <div class="field">
+                <label for="custom-message">Message for the cookie</label>
+                <input id="custom-message" type="text" maxlength="32" placeholder="Happy Birthday!" />
+                <p class="hint"><span id="message-count">0</span>/32 characters</p>
+              </div>
+            </div>
+
+            <div id="image-controls" class="custom-controls" hidden>
+              <h2>Your image</h2>
+              <input id="image-file" class="visually-hidden" type="file" accept="image/png,image/jpeg,image/webp,image/gif" />
+              <button id="choose-image" class="btn btn--primary btn--block" type="button">Choose image</button>
+              <div id="image-actions" class="image-actions" hidden>
+                <button id="replace-image" class="btn btn--ghost btn--sm" type="button">Replace</button>
+                <button id="remove-image" class="btn btn--ghost btn--sm danger-button" type="button">Remove</button>
+              </div>
+              <div class="field image-size-field" id="image-size-field" hidden>
+                <label for="image-size">Image size</label>
+                <input id="image-size" type="range" min="35" max="140" value="75" />
+              </div>
+              <p class="form-alert" id="image-error" role="alert" hidden></p>
+              <div class="notice privacy-note">
+                <strong>Your image stays private</strong>
+                It is used only for this demo order, stored only in this browser session,
+                and never added to the public design catalog. Upload only an image you
+                have permission to use. Maximum file size: 2 MB.
+              </div>
+            </div>
+
+            <div class="mini-summary" aria-live="polite">
+              <div><span>Design</span><strong id="custom-summary-type">Not selected</strong></div>
+              <div><span>Quantity</span><strong id="custom-summary-quantity">1</strong></div>
+              <div><span>Shipping</span><strong class="free">FREE</strong></div>
+              <div class="mini-summary__total"><span>Estimated total</span><strong id="custom-summary-total">$0.00</strong></div>
+            </div>
+
+            <p class="form-alert" id="customize-error" role="alert" hidden></p>
+            <button id="continue-customize" class="btn btn--primary btn--block" type="button">Continue to Customer Info</button>
+          </aside>
+        </div>
       </section>
     </main>
 
@@ -150,6 +190,8 @@
     </footer>
 
     <script src="js/order-state.js"></script>
+    <script src="js/cookie-art.js"></script>
+    <script src="js/customize.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

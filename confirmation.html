@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Demo Order Confirmed — Doughy Designs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="index.html"><img src="assets/logo.png" alt="Doughy Designs — custom cookie design" /></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg></button>
+        <nav class="site-nav" id="site-nav" aria-label="Main"><ul><li><a href="index.html">Home</a></li><li><a href="designs.html">Designs</a></li><li><a href="customize.html">Customize</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li class="nav-cart"><a class="cart-pill" href="order-details.html" data-cart-count>Cart • 0</a></li></ul></nav>
+        <a class="cart-pill header-cart" href="order-details.html" data-cart-count>Cart • 0</a>
+      </div>
+    </header>
+
+    <main class="wrap confirmation-wrap">
+      <section class="confirmation-card" id="confirmation-card">
+        <div class="confirmation-icon" aria-hidden="true">✓</div>
+        <h1>Demo order confirmed!</h1>
+        <p>This is a fictional order for the class demonstration. Nothing was charged or shipped.</p>
+        <p class="order-number" id="confirmation-number">Order —</p>
+        <div class="demo-banner">
+          <strong>Private, in-browser demonstration record</strong>
+          These order details and any uploaded image are visible only in this browser tab’s session. No payment details were stored.
+        </div>
+        <h2>Submitted order</h2>
+        <dl class="order-detail-list" id="confirmation-details"></dl>
+        <div class="confirmation-actions">
+          <a class="btn btn--ghost" href="review.html">View review</a>
+          <a class="btn btn--primary" id="new-order" href="designs.html">Start a new demo order</a>
+        </div>
+      </section>
+      <section class="confirmation-card" id="no-confirmation" hidden>
+        <h1>No confirmed demo order</h1>
+        <p>Complete the customization and checkout steps to create one.</p>
+        <p style="margin-top: 24px"><a class="btn btn--primary" href="designs.html">Choose a design</a></p>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="wrap"><div class="site-footer__grid"><div><img src="assets/logo.png" alt="Doughy Designs" /><p>Custom-designed sugar cookies for birthdays, parties, gifts and inside jokes.</p></div><div><h3>Explore</h3><ul><li><a href="index.html">Home</a></li><li><a href="designs.html">Designs</a></li><li><a href="customize.html">Customize</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div><div><h3>Privacy</h3><p>Customer details and uploaded images are never published. This demo keeps them only for the current browser session.</p></div></div><p class="site-footer__legal">© <span data-year>2026</span> Doughy Designs — a fictional business created for a Software Engineering class project. No real orders, payments, or shipments are processed.</p></div></footer>
+    <script src="js/order-state.js"></script>
+    <script src="js/confirmation.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
