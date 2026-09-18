@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Customize — Doughy Designs</title>
+    <!--
+      ======================================================================
+      PLACEHOLDER — DEVELOPER 2'S PAGE
+      ======================================================================
+      Developer 1 created this file only so the shared "Customize" link in the
+      site navigation resolves. None of the customize functionality is built
+      here. Developer 2 should replace the <main> section below with the real
+      customize step: the three design-type option cards, the cookie preview,
+      the image upload / move / resize / replace / remove controls, and the
+      "Continue to Customer Info" button that links to order-details.html.
+
+      The customer's selection so far is already saved in
+      sessionStorage["doughyDesigns.order"] - see js/order-state.js.
+      ======================================================================
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- ============================================================ header -->
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="index.html">
+          <img src="assets/logo.png" alt="Doughy Designs — custom cookie design" />
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Open menu"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M4 7h16M4 12h16M4 17h16"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Main">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="designs.html">Designs</a></li>
+            <li><a href="customize.html" aria-current="page">Customize</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="nav-cart">
+              <a class="cart-pill" href="order-details.html" data-cart-count
+                >Cart • 0</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <a class="cart-pill header-cart" href="order-details.html" data-cart-count
+          >Cart • 0</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <section class="wrap page-head">
+        <h1>Customize your cookie</h1>
+        <p>Choose one option, then set your quantity.</p>
+      </section>
+
+      <section class="wrap">
+        <div class="card" style="text-align: center; padding: 48px 28px">
+          <p style="color: var(--muted); max-width: 52ch; margin: 0 auto">
+            This step is under construction. In the meantime you can pick a
+            design and continue to your order details.
+          </p>
+          <p style="margin-top: 22px">
+            <a class="btn btn--primary" href="designs.html">Choose a design</a>
+            <a
+              class="btn btn--ghost"
+              href="order-details.html"
+              style="margin-left: 10px"
+              >Continue to Customer Info</a
+            >
+          </p>
+        </div>
+
+        <p class="handoff-note">
+          <strong>Team note:</strong> this file is a navigation placeholder
+          created by Developer 1. Developer 2 owns the customize step — the
+          design-type option cards, cookie preview, image upload and
+          move/resize/replace/remove controls — and should replace the section
+          above with it.
+        </p>
+      </section>
+    </main>
+
+    <!-- ============================================================ footer -->
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div>
+            <img src="assets/logo.png" alt="Doughy Designs" />
+            <p>
+              Custom-designed sugar cookies for birthdays, parties, gifts and
+              inside jokes.
+            </p>
+          </div>
+          <div>
+            <h3>Explore</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="designs.html">Designs</a></li>
+              <li><a href="customize.html">Customize</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Contact</h3>
+            <ul>
+              <li><a href="mailto:hello@doughydesigns.example">hello@doughydesigns.example</a></li>
+              <li><a href="tel:+15550132665">(555) 013-2665</a></li>
+              <li>Mon–Fri, 9am–5pm CT · Sat, 10am–2pm CT</li>
+            </ul>
+            <p>
+              Images you upload are used only for your order. They are never
+              added to our public design catalog and are never shown publicly
+              without your permission.
+            </p>
+          </div>
+        </div>
+        <p class="site-footer__legal">
+          © <span data-year>2026</span> Doughy Designs — a fictional business
+          created for a Software Engineering class project. No real orders,
+          payments, or shipments are processed.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/order-state.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Choose a Design — Doughy Designs</title>
+    <meta
+      name="description"
+      content="Browse the Doughy Designs catalog of pre-made cookie designs, or choose custom writing or your own image."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- ============================================================ header -->
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="index.html">
+          <img src="assets/logo.png" alt="Doughy Designs — custom cookie design" />
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Open menu"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M4 7h16M4 12h16M4 17h16"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Main">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="designs.html" aria-current="page">Designs</a></li>
+            <li><a href="customize.html">Customize</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="nav-cart">
+              <a class="cart-pill" href="order-details.html" data-cart-count
+                >Cart • 0</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <a class="cart-pill header-cart" href="order-details.html" data-cart-count
+          >Cart • 0</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <section class="wrap page-head">
+        <h1>Choose a design</h1>
+        <p>Pick a pre-made idea or continue to create something custom.</p>
+      </section>
+
+      <section class="wrap">
+        <!-- category filters -->
+        <div
+          class="filter-row"
+          id="filter-row"
+          role="group"
+          aria-label="Filter designs by category"
+        ></div>
+
+        <!-- pre-made design catalog -->
+        <div class="card-grid" id="design-grid"></div>
+        <p class="catalog-empty" id="catalog-empty" hidden>
+          No designs in this category yet.
+        </p>
+
+        <!-- what was selected + where it goes next -->
+        <div class="selection-bar" id="selection-bar" hidden>
+          <p id="selection-text"></p>
+          <a class="btn btn--primary" href="customize.html"
+            >Continue to Customize</a
+          >
+        </div>
+      </section>
+
+      <!-- ================================================= custom options -->
+      <section class="wrap section" id="custom-options">
+        <h2>Or create something custom</h2>
+        <div class="card-grid">
+          <div class="option-card" style="cursor: default">
+            <h3>Pre-made design</h3>
+            <span class="price">$2.00 per cookie</span>
+            <p>Choose any design from the catalog above.</p>
+          </div>
+          <a
+            class="option-card"
+            href="customize.html"
+            data-design-type="writing"
+          >
+            <h3>Custom writing</h3>
+            <span class="price">$2.50 per cookie</span>
+            <p>
+              Add your own short message or saying. You enter the wording on the
+              next step.
+            </p>
+          </a>
+          <a class="option-card" href="customize.html" data-design-type="image">
+            <h3>Custom image</h3>
+            <span class="price">$3.00 per cookie</span>
+            <p>
+              Upload your own image and place it on the cookie on the next step.
+            </p>
+          </a>
+        </div>
+
+        <div class="notice">
+          <strong>About your images and your privacy</strong>
+          Images you upload are used only for your own order. They are never
+          added to this public design catalog and are never displayed publicly
+          without your permission, and we do not show other customers' past
+          orders here. Every design in the catalog above is created by Doughy
+          Designs. Please only upload images you have permission to use.
+        </div>
+
+        <p class="hint" style="margin-top: 18px">
+          All cookies are our one standard sugar/butter cookie. Bulk pricing
+          applies automatically: 12–23 cookies save $0.25 each, and 24 or more
+          save $0.50 each. Shipping is always FREE.
+        </p>
+      </section>
+    </main>
+
+    <!-- ============================================================ footer -->
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div>
+            <img src="assets/logo.png" alt="Doughy Designs" />
+            <p>
+              Custom-designed sugar cookies for birthdays, parties, gifts and
+              inside jokes.
+            </p>
+          </div>
+          <div>
+            <h3>Explore</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="designs.html">Designs</a></li>
+              <li><a href="customize.html">Customize</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Contact</h3>
+            <ul>
+              <li><a href="mailto:hello@doughydesigns.example">hello@doughydesigns.example</a></li>
+              <li><a href="tel:+15550132665">(555) 013-2665</a></li>
+              <li>Mon–Fri, 9am–5pm CT · Sat, 10am–2pm CT</li>
+            </ul>
+            <p>
+              Images you upload are used only for your order. They are never
+              added to our public design catalog and are never shown publicly
+              without your permission.
+            </p>
+          </div>
+        </div>
+        <p class="site-footer__legal">
+          © <span data-year>2026</span> Doughy Designs — a fictional business
+          created for a Software Engineering class project. No real orders,
+          payments, or shipments are processed.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/order-state.js"></script>
+    <script src="js/cookie-art.js"></script>
+    <script src="js/designs-data.js"></script>
+    <script src="js/designs.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

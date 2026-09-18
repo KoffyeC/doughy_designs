@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your Information — Doughy Designs</title>
+    <meta
+      name="description"
+      content="Enter your contact and shipping details and choose how many cookies you want."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- ============================================================ header -->
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="index.html">
+          <img src="assets/logo.png" alt="Doughy Designs — custom cookie design" />
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Open menu"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M4 7h16M4 12h16M4 17h16"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Main">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="designs.html">Designs</a></li>
+            <li><a href="customize.html" aria-current="page">Customize</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="nav-cart">
+              <a class="cart-pill" href="order-details.html" data-cart-count
+                >Cart • 0</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <a class="cart-pill header-cart" href="order-details.html" data-cart-count
+          >Cart • 0</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <section class="wrap page-head">
+        <h1>Your information</h1>
+        <p>We need a few details to ship your order.</p>
+      </section>
+
+      <section class="wrap">
+        <div class="form-layout">
+          <!-- ------------------------------------------- details form --- -->
+          <div class="form-card">
+            <div class="form-alert" id="order-alert" role="alert" hidden></div>
+
+            <div class="notice" id="no-design-notice" style="margin-top: 0" hidden>
+              <strong>You haven't chosen a design yet</strong>
+              Pick a pre-made design, custom writing, or a custom image before
+              you place your order.
+              <p style="margin-top: 10px">
+                <a class="btn btn--primary btn--sm" href="designs.html"
+                  >Choose a design</a
+                >
+              </p>
+            </div>
+
+            <form id="order-form" novalidate>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="full-name">Full name</label>
+                  <input
+                    type="text"
+                    id="full-name"
+                    name="fullName"
+                    autocomplete="name"
+                    placeholder="Alex Smith"
+                  />
+                  <p class="error-text"></p>
+                </div>
+
+                <div class="field">
+                  <label for="phone">Phone</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    autocomplete="tel"
+                    placeholder="555-0100"
+                  />
+                  <p class="error-text"></p>
+                </div>
+
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    placeholder="alex@example.com"
+                  />
+                  <p class="error-text"></p>
+                </div>
+
+                <div class="field">
+                  <label for="address">Street address</label>
+                  <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    autocomplete="street-address"
+                    placeholder="123 Cookie Lane"
+                  />
+                  <p class="error-text"></p>
+                </div>
+
+                <div class="field">
+                  <label for="city">City</label>
+                  <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    autocomplete="address-level2"
+                    placeholder="Mequon"
+                  />
+                  <p class="error-text"></p>
+                </div>
+
+                <div class="field">
+                  <label for="state">State</label>
+                  <input
+                    type="text"
+                    id="state"
+                    name="state"
+                    autocomplete="address-level1"
+                    placeholder="WI"
+                  />
+                  <p class="error-text"></p>
+                </div>
+
+                <div class="field">
+                  <label for="zip">ZIP code</label>
+                  <input
+                    type="text"
+                    id="zip"
+                    name="zip"
+                    inputmode="numeric"
+                    autocomplete="postal-code"
+                    placeholder="53092"
+                  />
+                  <p class="error-text"></p>
+                </div>
+
+                <div class="field">
+                  <label for="quantity">Quantity</label>
+                  <div class="qty">
+                    <button
+                      type="button"
+                      data-qty-step="-1"
+                      aria-label="Decrease quantity"
+                    >
+                      −
+                    </button>
+                    <input
+                      type="number"
+                      id="quantity"
+                      name="quantity"
+                      min="1"
+                      step="1"
+                      value="1"
+                      aria-describedby="quantity-hint"
+                    />
+                    <button
+                      type="button"
+                      data-qty-step="1"
+                      aria-label="Increase quantity"
+                    >
+                      +
+                    </button>
+                  </div>
+                  <p class="error-text"></p>
+                  <p class="hint" id="quantity-hint">
+                    Bulk pricing applies automatically at 12 and 24 cookies.
+                  </p>
+                </div>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- ------------------------------------------ order summary --- -->
+          <aside>
+            <div class="summary">
+              <h2>Order summary</h2>
+              <p class="summary__type" id="summary-type">No design chosen yet</p>
+              <p class="summary__line" id="summary-design" hidden></p>
+              <p class="summary__line" id="summary-line">
+                Choose a design to see your price.
+              </p>
+
+              <div class="summary__row">
+                <span>Shipping</span>
+                <span class="free">FREE</span>
+              </div>
+
+              <p class="summary__total-label">Total</p>
+              <p class="summary__total" id="summary-total">$0.00</p>
+
+              <button
+                type="submit"
+                form="order-form"
+                class="btn btn--primary btn--block"
+              >
+                Review Order
+              </button>
+              <a
+                class="btn btn--ghost btn--sm btn--block"
+                href="designs.html"
+                style="margin-top: 12px"
+                >Change design</a
+              >
+            </div>
+
+            <div class="notice">
+              <strong>Your privacy</strong>
+              Your contact details and any image you upload are used only to
+              make and ship your order. They are never shown publicly and never
+              added to our design catalog.
+            </div>
+          </aside>
+        </div>
+
+        <p class="handoff-note">
+          <strong>Team note (Developer 1 → Developer 2):</strong>
+          “Review Order” validates this form, saves the design type, selected
+          design, quantity, price breakdown, and customer details to
+          <code>sessionStorage["doughyDesigns.order"]</code>, then navigates to
+          <code>review.html</code>. The review, mock payment, order number, and
+          confirmation steps are Developer 2's.
+        </p>
+      </section>
+    </main>
+
+    <!-- ============================================================ footer -->
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div>
+            <img src="assets/logo.png" alt="Doughy Designs" />
+            <p>
+              Custom-designed sugar cookies for birthdays, parties, gifts and
+              inside jokes.
+            </p>
+          </div>
+          <div>
+            <h3>Explore</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="designs.html">Designs</a></li>
+              <li><a href="customize.html">Customize</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Contact</h3>
+            <ul>
+              <li><a href="mailto:hello@doughydesigns.example">hello@doughydesigns.example</a></li>
+              <li><a href="tel:+15550132665">(555) 013-2665</a></li>
+              <li>Mon–Fri, 9am–5pm CT · Sat, 10am–2pm CT</li>
+            </ul>
+            <p>
+              Images you upload are used only for your order. They are never
+              added to our public design catalog and are never shown publicly
+              without your permission.
+            </p>
+          </div>
+        </div>
+        <p class="site-footer__legal">
+          © <span data-year>2026</span> Doughy Designs — a fictional business
+          created for a Software Engineering class project. No real orders,
+          payments, or shipments are processed.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/order-state.js"></script>
+    <script src="js/form-utils.js"></script>
+    <script src="js/order-details.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

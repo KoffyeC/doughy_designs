@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Doughy Designs — Custom Cookies, Your Way</title>
+    <meta
+      name="description"
+      content="Doughy Designs makes custom-designed sugar cookies. Pick a pre-made design, add your own writing, or put your own image on a cookie."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- ============================================================ header -->
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="index.html">
+          <img src="assets/logo.png" alt="Doughy Designs — custom cookie design" />
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Open menu"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M4 7h16M4 12h16M4 17h16"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Main">
+          <ul>
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="designs.html">Designs</a></li>
+            <li><a href="customize.html">Customize</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="nav-cart">
+              <a class="cart-pill" href="order-details.html" data-cart-count
+                >Cart • 0</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <a class="cart-pill header-cart" href="order-details.html" data-cart-count
+          >Cart • 0</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <!-- ========================================================== hero -->
+      <section class="wrap">
+        <div class="hero">
+          <div>
+            <h1>Custom cookies,<span>your way.</span></h1>
+            <p>
+              Turn a simple sugar cookie into a birthday surprise, inside joke,
+              or gift!
+            </p>
+            <a class="btn btn--primary" href="designs.html">Start Your Order</a>
+          </div>
+          <div class="hero__art" aria-hidden="true">
+            <svg viewBox="0 0 320 220">
+              <circle
+                cx="112"
+                cy="102"
+                r="86"
+                fill="#e0a458"
+                stroke="#c98b3e"
+                stroke-width="6"
+              />
+              <circle cx="84" cy="84" r="8" fill="#3e2020" />
+              <circle cx="140" cy="84" r="8" fill="#3e2020" />
+              <path
+                d="M78 128 H146"
+                stroke="#3e2020"
+                stroke-width="7"
+                stroke-linecap="round"
+              />
+              <circle
+                cx="232"
+                cy="140"
+                r="62"
+                fill="#e0a458"
+                stroke="#c98b3e"
+                stroke-width="6"
+              />
+              <circle cx="212" cy="126" r="6" fill="#3e2020" />
+              <circle cx="252" cy="126" r="6" fill="#3e2020" />
+              <path
+                d="M208 162 H256"
+                stroke="#3e2020"
+                stroke-width="6"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================ popular designs -->
+      <section class="wrap section home-popular">
+        <h2>Popular right now</h2>
+        <div class="card-grid" id="popular-grid"></div>
+      </section>
+
+      <!-- ================================================= design options -->
+      <section class="wrap section">
+        <h2>Three ways to design your cookie</h2>
+        <div class="card-grid">
+          <a class="option-card" href="designs.html">
+            <h3>Pre-made design</h3>
+            <span class="price">$2.00</span>
+            <p>
+              Choose a ready-made design from our catalog — birthdays, holidays,
+              sports and funny sayings.
+            </p>
+          </a>
+          <a class="option-card" href="designs.html#custom-options">
+            <h3>Custom writing</h3>
+            <span class="price">$2.50</span>
+            <p>
+              Add your own short message or saying, like “Happy Birthday,
+              Grandpa Joe!”
+            </p>
+          </a>
+          <a class="option-card" href="designs.html#custom-options">
+            <h3>Custom image</h3>
+            <span class="price">$3.00</span>
+            <p>
+              Upload a picture you have permission to use and place it right on
+              the cookie.
+            </p>
+          </a>
+        </div>
+        <p class="hint" style="margin-top: 16px">
+          Every cookie is our one standard sugar/butter cookie — no flavors or
+          sizes to pick, so you can focus on the design. Shipping is always
+          <strong style="color: var(--green)">FREE</strong>, and bulk pricing
+          kicks in automatically at 12 and 24 cookies.
+        </p>
+      </section>
+
+      <!-- ====================================================== occasions -->
+      <section class="wrap section">
+        <h2>Made for every occasion</h2>
+        <p class="hint" style="max-width: 62ch">
+          Doughy Designs is for people who host parties, celebrate milestones,
+          and give gifts that make someone laugh. If there is a reason to
+          celebrate, there is a cookie for it.
+        </p>
+        <ul class="tag-list" style="margin-top: 16px">
+          <li>Birthdays</li>
+          <li>Graduations</li>
+          <li>Holidays</li>
+          <li>Parties</li>
+          <li>Weddings</li>
+          <li>Gifts</li>
+          <li>Sports events</li>
+          <li>Inside jokes</li>
+          <li>Just because</li>
+        </ul>
+        <p style="margin-top: 28px">
+          <a class="btn btn--primary" href="designs.html">Start Your Order</a>
+        </p>
+      </section>
+    </main>
+
+    <!-- ============================================================ footer -->
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div>
+            <img src="assets/logo.png" alt="Doughy Designs" />
+            <p>
+              Custom-designed sugar cookies for birthdays, parties, gifts and
+              inside jokes.
+            </p>
+          </div>
+          <div>
+            <h3>Explore</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="designs.html">Designs</a></li>
+              <li><a href="customize.html">Customize</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Contact</h3>
+            <ul>
+              <li><a href="mailto:hello@doughydesigns.example">hello@doughydesigns.example</a></li>
+              <li><a href="tel:+15550132665">(555) 013-2665</a></li>
+              <li>Mon–Fri, 9am–5pm CT · Sat, 10am–2pm CT</li>
+            </ul>
+            <p>
+              Images you upload are used only for your order. They are never
+              added to our public design catalog and are never shown publicly
+              without your permission.
+            </p>
+          </div>
+        </div>
+        <p class="site-footer__legal">
+          © <span data-year>2026</span> Doughy Designs — a fictional business
+          created for a Software Engineering class project. No real orders,
+          payments, or shipments are processed.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/order-state.js"></script>
+    <script src="js/cookie-art.js"></script>
+    <script src="js/designs-data.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
