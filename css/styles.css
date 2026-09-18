@@ -758,8 +758,7 @@ a.feature-card:hover {
   border-radius: var(--radius-lg);
   padding: 30px 30px 34px;
   text-align: center;
-  position: sticky;
-  top: 104px;
+  position: static;
 }
 
 .summary h2 {
