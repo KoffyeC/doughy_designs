@@ -1,8 +1,6 @@
 # Doughy Designs — Custom Cookie Website
 
-A fictional custom cookie business site built for a Software Engineering class
-project. Plain HTML, CSS and JavaScript — no build step, no dependencies, ready
-for GitHub Pages.
+Plain HTML, CSS and JavaScript — no application build step or runtime dependencies, ready for GitHub Pages.
 
 ## Team split
 
@@ -77,6 +75,18 @@ Developer 2 adds the fields their steps own — custom writing text, the uploade
 image, image placement, and the order number — to the same object via
 `OrderState.save({ ... })`. `OrderState.load()` preserves any extra keys it does
 not recognise, so the two halves will not overwrite each other.
+
+## Testing
+
+The project includes automated Selenium tests using Firefox and Node.js.
+
+* Smoke tests: Verify core pages and basic functionality.
+* Regression tests: Verify design selection, customization, pricing, validation, image controls, ordering, checkout, and confirmation.
+* Run all tests: `npm.cmd test`
+* Run smoke tests: `npm.cmd run test:smoke`
+* Run regression tests: `npm.cmd run test:regression`
+
+The test suite contains 28 automated tests.
 
 ## Running it
 
